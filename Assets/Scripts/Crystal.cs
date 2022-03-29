@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour
 {
+    [SerializeField] GameObject gameOverPanel;
     private void Start()
     {
         if(gameObject.CompareTag("Enemy"))
@@ -13,5 +14,10 @@ public class Crystal : MonoBehaviour
             Player.instance.AddArmy(gameObject.transform);
 
 
+    }
+
+    private void OnDestroy()
+    {
+        gameOverPanel.SetActive(true);
     }
 }

@@ -14,9 +14,9 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        Player.instance.AddEnemy(gameObject.transform);
-        target = Player.instance.GetNearArmy();
     }
+
+    private void Start() => Player.instance.AddEnemy(gameObject.transform);
 
 
     private void Update()

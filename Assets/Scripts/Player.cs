@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -85,5 +86,12 @@ public class Player : MonoBehaviour
     public void RemoveArmy(Transform _army)
     {
         army.Remove(_army);
+    }
+
+    public void ReloadScene()
+    {
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
+
     }
 }
